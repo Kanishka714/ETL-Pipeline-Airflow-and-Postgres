@@ -1,0 +1,328 @@
+[2024-10-23T04:36:39.279+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-23T04:36:39.289+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_and_store_amazon_books.insert_data manual__2024-10-23T04:36:25.006079+00:00 [queued]>
+[2024-10-23T04:36:39.294+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_and_store_amazon_books.insert_data manual__2024-10-23T04:36:25.006079+00:00 [queued]>
+[2024-10-23T04:36:39.294+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-23T04:36:39.301+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): insert_data> on 2024-10-23 04:36:25.006079+00:00
+[2024-10-23T04:36:39.313+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1719) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-23T04:36:39.314+0000] {standard_task_runner.py:72} INFO - Started process 1721 to run task
+[2024-10-23T04:36:39.315+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'fetch_and_store_amazon_books', 'insert_data', 'manual__2024-10-23T04:36:25.006079+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp1d7981ew']
+[2024-10-23T04:36:39.316+0000] {standard_task_runner.py:105} INFO - Job 16: Subtask insert_data
+[2024-10-23T04:36:39.346+0000] {task_command.py:467} INFO - Running <TaskInstance: fetch_and_store_amazon_books.insert_data manual__2024-10-23T04:36:25.006079+00:00 [running]> on host b6ba866339d5
+[2024-10-23T04:36:39.411+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_and_store_amazon_books' AIRFLOW_CTX_TASK_ID='insert_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-23T04:36:25.006079+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-23T04:36:25.006079+00:00'
+[2024-10-23T04:36:39.415+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-23T04:36:39.415+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-23T04:36:39.416+0000] {logging_mixin.py:190} INFO - Current task name:insert_data state:running start_date:2024-10-23 04:36:39.289737+00:00
+[2024-10-23T04:36:39.416+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_amazon_books and current dag run status:running
+[2024-10-23T04:36:39.416+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-23T04:36:39.442+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.447+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Stability Strategy: Build Your Business, Balance Your Life, and Bank More Profit', 'Paperback', '8.', '5.0 out of 5 stars', 'by')
+[2024-10-23T04:36:39.451+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.457+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.459+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ("The Biblical Path to Financial Freedom: A Reflective Guide to Managing Your Finances According to God's Word", 'Seth M. Jones', '10.', '5.0 out of 5 stars', 'by')
+[2024-10-23T04:36:39.460+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.464+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.466+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness', 'Audible Audiobooks', '0.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.467+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.471+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.473+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Warren Buffett and the Interpretation of Financial Statements: The Search for the Company with a Durable Competitive Advantage', 'Mary Buffett', '8.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.474+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.478+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.480+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Trading: Technical Analysis Masterclass: Master the financial markets', 'Rolf Schlotmann', '4.', '4.3 out of 5 stars', 'by')
+[2024-10-23T04:36:39.481+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.486+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.488+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Money: Know More, Make More, Give More: Learn how to make more money and transform your life', 'Paperback', '10.', '4.4 out of 5 stars', '1,789')
+[2024-10-23T04:36:39.488+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.492+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.494+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Intelligent Investor: The Definitive Book on Value Investing - A Book of Practical Counsel', 'Benjamin Graham', '12.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.495+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.502+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.507+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('UK Accounting & Reporting: An Introduction', 'Chris Turner', '9.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.510+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.523+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.526+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Corporate Innovation in the Fifth Era: Lessons from Alphabet/Google, Amazon, Apple, Facebook, and Microsoft', 'Matthew C. Le Merle', '15.', '4.0 out of 5 stars', 'by')
+[2024-10-23T04:36:39.527+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.533+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.536+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Girls That Invest: Your Guide to Financial Independence through Shares and Stocks', 'Simran Kaur', '8.', '4.7 out of 5 stars', 'by')
+[2024-10-23T04:36:39.538+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.543+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.546+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Girls Just Wanna Have Funds: A Feminist Guide to Investing: THE SUNDAY TIMES BESTSELLER', 'Camilla Falkenberg', '10.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.547+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.552+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.555+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ("Financial Freedom (It's Easy When You Know How)", 'Alexander Fenn', '8.', '4.7 out of 5 stars', 'by')
+[2024-10-23T04:36:39.557+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.563+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.566+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ("Rich Dad's Increase Your Financial IQ: Get Smarter with Your Money", 'Audible Audiobooks', '0.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.567+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.574+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.580+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Fundamental Analysis for Beginners: Grow Your Investment Portfolio Like A Pro Using Financial Statements and Ratios of Any Business with Zero Investing Experience Required', 'A.Z Penn', '19.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.581+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.590+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.593+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Power of Discipline: How to Use Self Control and Mental Toughness to Achieve Your Goals', 'Daniel Walter', '14.', '4.4 out of 5 stars', 'by')
+[2024-10-23T04:36:39.594+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.599+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.601+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Joy: Banish Debt, Grow Your Money and Unlock Financial Freedom in 10 Weeks - INSTANT SUNDAY TIMES BESTSELLER', 'Ken Okoroafor', '13.', '4.8 out of 5 stars', 'by')
+[2024-10-23T04:36:39.602+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.607+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.610+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ("Financial Intelligence, Revised Edition: A Manager's Guide to Knowing What the Numbers Really Mean", 'Karen Berman', '19.', '4.7 out of 5 stars', 'by')
+[2024-10-23T04:36:39.611+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.616+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.618+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Only Technical Analysis Book You Will Ever Need: A Must-Have Charting Manual for Traders and Investors', 'Brian Hale', '10.', '4.2 out of 5 stars', 'by')
+[2024-10-23T04:36:39.619+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.624+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.627+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Levelheaded Investor: Your expert guide to lifelong money mastery and financial security', 'Michael Aitken', '8.', '4.9 out of 5 stars', 'by')
+[2024-10-23T04:36:39.628+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.632+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.637+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Smart Money Habits For Teens And Young Adults: How to Survive Recession and Achieve Financial Independence With Smart Budgeting, Debt Management, and Investing', 'Ward Nash', '10.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.639+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.647+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.650+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Total Money Makeover Updated and Expanded: A Proven Plan for Financial Peace', 'Dave Ramsey', '17.', '4.7 out of 5 stars', 'by')
+[2024-10-23T04:36:39.651+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.657+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.660+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Feminist: Overcome the Patriarchy’s Bullsh*t to Master Your Money and Build a Life You Love', 'Audible Audiobooks', '0.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.661+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.670+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.674+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Edge: How competition for resources is pushing the world, and its climate, to the brink – and what we can do about it.', 'Jonathan Maxwell', '3.', '4.8 out of 5 stars', 'by')
+[2024-10-23T04:36:39.675+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.684+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.689+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Life is Short And So Is This Book: Brief Thoughts On Making The Most Of Your Life', 'Peter Atkins', '0.', '4.2 out of 5 stars', 'by')
+[2024-10-23T04:36:39.692+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.706+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.712+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Literacy for Kids: 20 Original Stories to Learn How to Control and Grow Your Money (Personal Development for Children)', 'Educa’ Fun', '12.', '4.4 out of 5 stars', 'by')
+[2024-10-23T04:36:39.714+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.722+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.725+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Accounting For Dummies (UK Edition)', 'Steven Collings', '12.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.726+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.731+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.733+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Freedom: A Proven Path to All the Money You Will Ever Need', 'Audible Audiobooks', '0.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.734+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.739+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.742+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('What Every Woman Needs to Know to Create Financial Abundance', 'Linda Davies', '19.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.743+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.748+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.750+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Make A Payment: How to Decimate Credit Cards with Debt Consolidation to obtain Financial Peace of Mind', 'J.C. Allen', '11.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.751+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.762+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.766+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Advances in Financial Machine Learning', 'Marcos Lopez de Prado', '29.', '4.4 out of 5 stars', 'by')
+[2024-10-23T04:36:39.767+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.773+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.776+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('How to Fund the Life You Want: What everyone needs to know about savings, pensions and investments', 'Robin Powell', '13.', '4.8 out of 5 stars', 'by')
+[2024-10-23T04:36:39.777+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.784+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.786+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Planning for Entrepreneurs: How to build your own route to financial independence', 'James Woodfall', '11.', '5.0 out of 5 stars', 'by')
+[2024-10-23T04:36:39.787+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.791+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.793+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Freedom through Stocks: Swing Trading Strategy Step-by-Step - Investing in just 4 hours per week', 'Philip Leuthe', '0.', '4.8 out of 5 stars', 'by')
+[2024-10-23T04:36:39.794+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.798+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.800+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('FINANCIAL ACCOUNTING:PREPARING FINANCIAL STATEMENTS - WORKBOOK', 'Paperback', '15.', '5.0 out of 5 stars', 'by')
+[2024-10-23T04:36:39.801+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.805+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.807+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Client-centred Financial Adviser: The ultimate guide to building high-trust, high-profit relationships and a thriving practice', 'Paperback', '6.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.808+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.812+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.814+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Money Skills for Teens and Financial Literacy for Young Adults: 2 Books in 1 – Learn Successful Money Management and Personal Finance Skills to Go ... Already in Your 20s (Life Skill Handbooks)', 'Emily Carter', '19.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.815+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.819+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.821+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ("Warren Buffett Accounting Book: Reading Financial Statements for Value Investing (Warren Buffett's 3 Favorite Books Book 2)", 'Stig Brodersen', '4.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.822+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.826+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.828+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Get Good with Money: Ten Simple Steps to Becoming Financially Whole', 'Audible Audiobooks', '0.', '4.8 out of 5 stars', 'by')
+[2024-10-23T04:36:39.829+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.833+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.835+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Your Financial Planner: Review, Plan, Reflect', 'Camilla Falkenberg', '11.', '4.4 out of 5 stars', 'by')
+[2024-10-23T04:36:39.836+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.840+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.842+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('From Zero to Millionaire: A simple, effective and stress-free way to invest in the stock market', 'Nicolas Bérubé', '12.', '4.3 out of 5 stars', 'by')
+[2024-10-23T04:36:39.843+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.847+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.849+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ("The Trading Code: A Beginner's Guide how to Make Money in the Stock Market and Day Trade for a Living", 'Richard Cohen', '12.', '4.3 out of 5 stars', 'by')
+[2024-10-23T04:36:39.849+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.854+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.856+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('How to Write a Business Plan With No Experience: A Simple Guide With Tons of Business Plan Examples to Achieve a Successful Business and Attain Profitability (Business Blueprint)', 'Richard Hedberg', '11.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.856+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.861+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.863+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('How Do Banks Work: A Beginner’s Guide to the Financial System', 'Paperback', '11.', '5.0 out of 5 stars', 'by')
+[2024-10-23T04:36:39.864+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.870+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.876+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('The Layman’s Guide to Understanding Financial Statements: How to Read, Analyze, Create & Understand Balance Sheets, Income Statements, Cash Flow & More', 'Simon  J Lawrence', '10.', '4.0 out of 5 stars', 'by')
+[2024-10-23T04:36:39.878+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.889+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.892+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Posts to Profits: The social media marketing blueprint for building a profitable six-figure online business', 'Simon Mitchell', '14.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.893+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.900+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.903+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Boom and Bust: A Global History of Financial Bubbles', 'Paperback', '11.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.904+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.909+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.911+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Financial Freedom: Investing Guide to Getting Rich Step by Step with Index Funds, ETFs and Real Estate: Passive Income and Personal Finance for ... from the Beginning (Passive Income Guides)', 'Alexander S.', '9.', '4.6 out of 5 stars', 'by')
+[2024-10-23T04:36:39.912+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.917+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.919+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Bookkeeping and Accounting All-in-One For Dummies - UK, UK Edition', 'Kelly', '13.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.920+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.923+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.925+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Investing for Kids: From Piggy Banks to Portfolios - A Fun Guide to Financial Literacy for Ages 8-12', 'Freeman Publications', '11.', '4.3 out of 5 stars', 'by')
+[2024-10-23T04:36:39.926+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.930+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-10-23T04:36:39.932+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO books (title, authors, price, rating, description)
+        VALUES (%s, %s, %s, %s, %s)
+    , parameters: ('Preparing Financial Statements: Quiz Book (Accountancy Revision Workbooks)', 'Teresa Clarke', '5.', '4.5 out of 5 stars', 'by')
+[2024-10-23T04:36:39.932+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-23T04:36:39.933+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-23T04:36:39.940+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-23T04:36:39.940+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=fetch_and_store_amazon_books, task_id=insert_data, run_id=manual__2024-10-23T04:36:25.006079+00:00, execution_date=20241023T043625, start_date=20241023T043639, end_date=20241023T043639
+[2024-10-23T04:36:39.947+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-23T04:36:39.947+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-23T04:36:39.947+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_amazon_books queued_at:2024-10-23 04:36:25.043012+00:00
+[2024-10-23T04:36:39.948+0000] {logging_mixin.py:190} INFO - Task hostname:b6ba866339d5 operator:PythonOperator
+[2024-10-23T04:36:39.994+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-23T04:36:40.020+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-23T04:36:40.021+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
